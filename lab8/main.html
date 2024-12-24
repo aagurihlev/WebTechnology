@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Куайн в программировании</title>
+    <link rel="stylesheet" href="prism.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin: 5px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Куайн в программировании</h1>
+    <p>
+        Куайн — это программа, которая выводит свой собственный исходный код. 
+    </p>
+
+    <h2>Примеры куайнов</h2>
+    <button onclick="showCode('python')">Python</button>
+    <button onclick="showCode('java')">Java</button>
+    <button onclick="showCode('cpp')">C++</button>
+
+    <pre id="code" class="language-python"></pre>
+
+    <script>
+        const codes = {
+            python: `s = 's = {!r}\\nprint(s.format(s))\\n'
+print(s.format(s))`,
+            java: `public class Quine {
+    public static void main(String[] args) {
+        String s = "public class Quine {\\n    public static void main(String[] args) {\\n        String s = %s;\\n        System.out.printf(s, (char)34 + s + (char)34);\\n    }\\n}";
+        System.out.printf(s, (char)34 + s + (char)34);
+    }
+}`,
+            cpp: `#include <iostream>
+using namespace std;
+
+int main() {
+    const char* s = "#include <iostream>\\nusing namespace std;\\n\\nint main() {\\n    const char* s = %c%s%c;\\n    printf(s, 34, s, 34);\\n}\\n";
+    printf(s, 34, s, 34);
+    return 0;
+}`
+        };
+
+        function showCode(language) {
+            const codeElement = document.getElementById('code');
+            codeElement.textContent = codes[language];
+            codeElement.className = 'language-' + language;
+            Prism.highlightElement(codeElement);
+        }
+    </script>
+
+    <script src="prism.js"></script>
+</body>
+</html>

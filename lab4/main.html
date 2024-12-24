@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        button {
+            margin: 5px;
+        }
+    </style>
+    <script>
+
+        function checkConfirm() {
+            const result = window.confirm("Нажмите ОК или Отмена");
+            alert("Вы нажали: " + (result ? "ОК" : "Отмена"));
+        }
+
+        function greetUser() {
+            const surname = window.prompt("Введите вашу фамилию:");
+            alert("Привет, " + surname + "!");
+        }
+
+        function userMonologue() {
+            const name = window.prompt("Введите ваше имя:");
+            const age = window.prompt("Введите ваш возраст:");
+            const mood = window.prompt("Какое у вас настроение?");
+            document.write(`Здравствуй, ${name}<br>Тебе ${age} лет<br>И у тебя ${mood} настроение!<br>Всё верно, не так-ли?!`);
+        }
+
+        function convertAndSum() {
+            var x = prompt("Введите значение x ", "0");
+            var y = prompt("Введите значение y ", "0.0");
+            var integerX = parseInt(x); 
+            var floatY = parseFloat(y);
+            var result = integerX + floatY;
+            document.write("Результат: " + result);
+        }
+
+        function findErrors() {
+            var firstName = prompt("Введите имя");
+            var lastName = prompt("Введите фамилию");
+            var age = prompt("Введите возраст");
+            alert("В следующем году вам будет " + (parseInt(age) + 1) + " лет.");
+        }
+
+        function showParagraph() {
+            const id = prompt("Введите ID абзаца (ID1, ID2, ID3):");
+            const paragraph = document.getElementById(id);
+            if (paragraph) {
+                alert(paragraph.innerHTML);
+            } else {
+                alert("Абзац с таким ID не найден.");
+            }
+        }
+
+        function replaceParagraphText() {
+            const id = prompt("Введите ID абзаца (ID1, ID2, ID3):");
+            const newText = prompt("Введите новый текст для абзаца:");
+            const paragraph = document.getElementById(id);
+            if (paragraph) {
+                paragraph.innerHTML = newText;
+                alert("Новый текст: " + newText);
+            } else {
+                alert("Абзац с таким ID не найден.");
+            }
+        }
+
+        function checkLeapYear() {
+            var year = prompt("Введите год:");
+            year = parseInt(year);
+            var isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+            alert(year + (isLeap ? " является високосным." : " не является високосным."));
+        }
+
+        function generateRandomNumbers() {
+            var randomNumbers = "";
+            for (var i = 0; i < 10; i++) {
+                randomNumbers += Math.floor(Math.random() * 100) + " ";
+            }
+            document.getElementById("randomNumbers").innerText = randomNumbers;
+        }
+
+        function drawPyramid() {
+            var pyramid = "";
+            for (var i = 1; i <= 5; i++) {
+                pyramid += "x".repeat(i * 2) + "\n";
+            }
+            document.getElementById("pyramid").innerText = pyramid;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="checkConfirm()">Задание 1</button>
+    <button onclick="greetUser()">Задание 2</button>
+    <button onclick="userMonologue()">Задание 3</button>
+    <button onclick="convertAndSum()">Задание 4</button>
+    <button onclick="findErrors()">Задание 5</button>
+    <button onclick="showParagraph()">Задание 6</button>
+    <button onclick="replaceParagraphText()">Задание 7</button>
+
+    <h2>Примеры абзацев:</h2>
+    <p id="ID1">Это первый абзац.</p>
+    <p id="ID2">Это второй абзац.</p>
+    <p id="ID3">Это третий абзац.</p>
+
+    <h2>Второй блок заданий</h2>
+    <button onclick="checkLeapYear()">Задание 5</button>
+    <button onclick="generateRandomNumbers()">Задание 15</button>
+    <button onclick="drawPyramid()">Задание 25</button>
+
+    <h3>Случайные числа</h3>
+    <p id="randomNumbers"></p>
+
+    <h3>Пирамида:</h3>
+    <pre id="pyramid"></pre>
+</body>
+</html>

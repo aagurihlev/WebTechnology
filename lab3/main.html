@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <form action="" method="get">
+        <p>
+          <label for="name">Введите имя:</label>
+          <input type="text" name="name" id="name" required>
+        </p>
+        <p>
+            <label for="password">Введите пароль:</label>
+            <input type="password" name="password" id="password" required>
+        </p>
+        <p>
+            <label for="textarea">Напишите текст</label>
+            <textarea id="textarea" name="textarea" rows="5" cols="33">
+                Проверка
+            </textarea>
+        </p>
+        <p>
+            <label for="1checkbox">Первый</label>
+            <input type="checkbox" name="1checkbox">
+        </p>
+        <p>
+            <label for="2checkbox">Второй</label>
+            <input type="checkbox" name="2checkbox">
+        </p>
+        <p>
+            <label for="3checkbox">Третий</label>
+            <input type="checkbox" name="3checkbox">
+        </p>
+        <p>
+            <label for="1radio">Первый</label>
+            <input type="radio" name="1radio">
+        </p>
+        <p>
+            <label for="2radio">Второй</label>
+            <input type="radio" name="2radio">
+        </p>
+        <p>
+            <label for="3radio">Третий</label>
+            <input type="radio" name="3radio">
+        </p>
+        <label for="options">Выберите вариант:</label>
+        <select name="options" id="options">
+            <option value="1">Пример 1</option>
+            <option value="2">Пример 2</option>
+            <option value="3">Пример 3</option>
+        </select>
+    </form>
+    <h1>Пример</h1>
+    <form action="" method="get">
+        <p>
+            <label for="name">Ваше имя:</label>
+            <input type="text" name="name" id="name" required>
+        </p>
+        <p>
+            <label for="male">Мужчина</label>
+            <input type="radio" name="sex">
+        </p>
+        <p>
+            <label for="female">Женщина</label>
+            <input type="radio" name="sex">
+        </p>
+        <p>
+            <label for="child">Детей</label>
+            <input type="text" name="child" id="child" size="10">
+        </p>
+        <p>
+            <label for="country">Страна</label>
+            <input type="text" name="country" id="country" size="10">
+        </p>
+		<ul>
+			<p>
+            <label for="ukr">Украина</label>
+            <input type="radio" name="countr">
+        </p>
+        <p>
+            <label for="rus">Россия</label>
+            <input type="radio" name="countr">
+        </p>
+		<p>
+            <label for="other">Другая</label>
+            <textarea id="textarea" name="other" id="other" rows="5" cols="33">
+            </textarea>
+        </p>
+		</ul>
+		<p>
+            <label for="email">Электронный адрес</label>
+            <input type="email" name="email" id="email" required>
+        </p>
+    </form>
+</body>
+</html>
